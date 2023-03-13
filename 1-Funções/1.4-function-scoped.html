@@ -1,0 +1,39 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Scoped de função - quando uma função está
+        // disponível para ser usada dentro do seu código
+
+        function mult(n) {
+            n *= n 
+            return n
+        }
+
+        console.log(mult(10)) // 100
+
+        // -----------------------------------------------
+
+        // É possível definir uma função para uma variável
+        const mult = function (n) {
+            n *= n
+            return n
+        }
+
+        console.log(mult(10)) // 100
+
+        // Se eu chamar o console e depois declarar
+        // a função, dará erro, mesmo que a variável seja 'var'
+        
+        console.log(multi(10)) // erro
+
+        const multi = function (n) {
+            n *= n
+            return n
+        }
+
+        // O erro se dá por ter chamado a variável antes
+        // de sua declaração
+
+    </script>
+</html>

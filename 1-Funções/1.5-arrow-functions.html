@@ -1,0 +1,36 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        const mult = function (n) {
+            n *= n
+            return n
+        }
+
+        console.log(mult(10))
+
+        // Arrow Function - substituir a palavra 'function'
+        // por uma seta '=>'
+        
+        const multi = (n) => {
+            n *= n
+            return n
+        }
+
+        console.log(multi(10))
+
+        // Caso eu tire as chaves '{}' abstraio o 'return'
+        const multipl = (n) => (n *= n)
+
+        console.log(multipl(10)) // 100
+
+        // Caso não tire, o 'return' deve aparecer
+        const multip = (n) => {
+            n *= n
+        }
+
+        console.log(multip(10)) // undefined
+
+
+    </script>
+</html>

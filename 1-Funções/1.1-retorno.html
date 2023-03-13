@@ -1,0 +1,39 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Função de soma que retorna um valor
+        function sum(n1, n2) {
+            // console.log(n1 + n2)
+
+            // com o console, ele somente será mostrado
+            // no console
+
+            // Mas, podemos usamos o 'return' para
+            // ter em mãos o resultado da função
+            // e poder, então, decidir onde usar
+
+            const result = n1 + n2
+            return result
+        }
+
+        const result = sum(1, 1)
+        // result já é uma variável diferente da no escopo anterior
+        
+        console.log(result)
+
+        // outra maneira de chamar a função e mostrar o resultado:
+        console.log(sum(1, 1))
+        // Chamando a função dentro do console.log
+
+
+        // Tudo isso pode ser feito dessa maneira:
+
+        function soma(n1, n2) {
+            return n1 + n2
+        }
+
+        console.log(soma(1, 2))
+
+    </script>
+</html>

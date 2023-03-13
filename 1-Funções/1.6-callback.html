@@ -1,0 +1,40 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Multiplicando os próprios valores
+        function mult(values, func) {
+            for (let i = 0; i < values.length; i++) {
+                // values[i] *= values[i] // n *= n
+                values[i] = func(values[i])
+            }
+
+            return values
+        }
+
+        const values = [1, 2, 3, 4, 10] 
+        // 0: 1
+        // 1: 4
+        // 2: 9
+        // 3: 16
+        // 4: 100
+        // length: 5
+
+        // Agora é possível o usuário decidir o que quer fazer
+
+        const func = (n) => n * n * n
+        // (5) [1, 8, 27, 64, 100]
+
+        const func = (n) => n * 2
+        // (5) [2, 4, 6, 8, 20, 40]
+
+        // callbacks: map, filter, reduce
+
+
+        console.log(mult(values, func))
+
+        // também posso passar uma função no console
+        console.log(mult(values, (n) => n * 2))
+
+    </script>
+</html>

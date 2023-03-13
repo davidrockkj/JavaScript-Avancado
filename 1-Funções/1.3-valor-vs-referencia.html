@@ -1,0 +1,45 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Imaginando uma função multiplicadora que
+        // multiplica o valor por ele mesmo
+
+        function mult(n) {
+            let res = n
+            res *= n
+            return res
+        }
+
+        // esse 'n' é diferente do scope anterior
+        let n = 10
+        console.log(mult(n)) // 100
+
+        // -----------------------------------------------
+
+        // pode ser feito dessa meneira:
+        function multi(n) {
+            n *= n
+            return n
+        }
+
+        let numVal = 10
+        console.log(multi(numVal)) // 100 
+        console.log(numVal) // 10
+
+        // -----------------------------------------------
+
+        // Função multi com variável do tipo Objeto
+        function multObj(obj) {
+            obj.value *= obj.value
+            return obj
+        }
+
+        const numObj = { value: 10 }
+        console.log(multObj(numObj)) // 100
+        console.log(numObj) // 100
+
+        // o valor do objeto foi alterado
+
+    </script>
+</html>
