@@ -1,0 +1,28 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Juntar dois arrays
+        let set1 = [1, 2, 3, 4, 5]
+        let set2 = [6, 7, 8, 9, 10]
+
+        console.log(set1 + set2) // 1, 2, 3, 4, 56, 7, 8, 9, 10
+        console.log(typeof (set1 + set2)) // string
+        console.log(set1.join(",") + set2.join(",")) // 1, 2, 3, 4, 56, 7, 8, 9, 10
+        console.log(typeof (set1.join(",") + set2.join(","))) // string
+        // Na prática isso cria uma string (coersion)
+
+
+        console.log([set1, set2])
+        // cria um novo array com 2 sub-arrays dentro
+
+        console.log(set1.concat(set2)) // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        // cria um novvo array concatenado / somado
+
+        let set = [11, 12, 13]
+        console.log(set1.concat(set2).concat(set3)) // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+        
+        console.log(set1.concat(set3)) // 1, 2, 3, 4, 5, 11, 12, 13
+
+    </script>
+</html>

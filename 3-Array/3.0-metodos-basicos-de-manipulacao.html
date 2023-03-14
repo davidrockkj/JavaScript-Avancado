@@ -1,0 +1,43 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        let people = ["Joao", "Meredith", "Jordirley", "Cicera", "Fernanda"]
+        // O array vai de 0 -> n
+        // Sendo 'n' o último elemento
+        // people.length = 5 elementos
+
+
+        // Retornar elementos específicos de um array
+        console.log(people[2]) // Jordirley - elemento 3
+        console.log (people[people.length - 1]) // Fernanda - último elemento
+
+        // Retornar "fatias" de um array
+        console.log(people.slice(2)) // (3) ['Jordirley', 'Cicera', 'Fernanda']
+        console.log(people.slice(1, 3)) // (2) ['Meredith', 'Jordirley']
+
+        // Adicionar novos elementos no array (início e fim)
+        people.unshift("Maria") // adiciona no início
+        console.log(people) // (6) ['Maria', 'Joao', 'Meredith', 'Jordirley', 'Cicera', 'Fernanda']
+        people.push("Ana") // adiciona no final
+        console.log(people) // (7) ['Maria', 'Joao', 'Meredith', 'Jordirley', 'Cicera', 'Fernanda', 'Ana']
+
+        // Remover elementos no array (início e fim)
+        people.pop() // remove do fim do array e retorna o elemento removido
+        people.shift() // remove do início do array e retorna o elemento removido
+        console.log(people) // (5) ['Joao', 'Meredith', 'Jordirley', 'Cicera', 'Fernanda']
+
+        console.log(people.pop()) // Ana
+        
+        // Remover "fatias" de um array
+        people.splice(1, 2) // começo, quantidade de objetos a eliminar
+        console.log(people) // ['Joao', 'Cicera', 'Fernanda']
+
+        // Localizar elementos
+        let index = people.indexOf("Jordirley")
+
+        console.log(index) // 3
+
+
+    </script>
+</html>

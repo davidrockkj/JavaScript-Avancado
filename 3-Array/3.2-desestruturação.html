@@ -1,0 +1,31 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Desestruturar Array
+        // Declarar 2 variáveis que vão receber os primeiros elementos do array
+
+        let set = [1, 2, 3, 4, 5]
+
+        let [n1, n2] = set // 1, 2
+
+        console.log("n1", n1) // n1 1
+        console.log("n2", n2) // n2 2
+
+        function myFunction() {
+            const x = 10
+            const y = 400
+
+            return [x, y]
+        }
+
+        const myArray = myFunction()
+        console.log(myArray[0]) // 10
+        console.log(myArray[1]) // 400
+
+        const [x, y] = myFunction()
+        console.log("x", x) // x 10
+        console.log("y", y) // y 400
+
+    </script>
+</html>
