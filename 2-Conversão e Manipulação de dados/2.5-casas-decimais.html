@@ -1,0 +1,35 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // toFixed()
+        // Math.ceil()
+        // Math.floor()
+        // Math.round()
+        // new Intl.NumberFormat().format()
+        let value = 1234.59
+
+        // .toFixed() - fixa casa decimal e arredonda (tbm já transforma em String)
+        console.log(value.toFixed(1)) // 1234.6 - fixar 1 casa decimal e arredondar .5 pra cima
+        console.log(value.toFixed(2)) // 1234.59 - fixar 2 casas decimais
+        console.log(value.toFixed(3)) // 1234.590 - fixar 3 casas decimais
+
+        // .ceil(value) - método de arredondamento para números inteiros PARA CIMA
+        console.log(Math.ceil(value)) // 1235
+        
+        // .floor(value) - método de arredondamento para números inteiros PARA BAIXO
+        console.log(Math.floor(value)) // 1234
+
+        // .round(value) - método parecido com o método .floor()
+        console.log(Math.round(value)) // 1234
+
+        // Intl - internacionalização, estilo moeda
+        console.log(
+            new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            }).format(value)
+        ) // R$ 1.234,59
+
+    </script>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // '30/04/2022' <-> Date
+
+        console.log(new Date())
+        // Data é uma implementação específica no JavaScript
+        
+        console.log(new Date('30/04/2022')) // Invalid Date
+        // isso porque o tipo Date conversa com o formato ISO
+        // e o formato ISO não comporta esse formato. Comporta MM/DD/YYYY
+
+        console.log(new Date('04/30/2022 12:00')) // Sat Apr 30 2022 12:00:00 GMT-0300 (Brasilia Standard Time)
+        // ou
+        console.log(new Date('2022-04-30'))
+        // ou
+        console.log(new Date('2022 04 30'))
+
+        // Essa conversão serve para fazer contas
+
+        console.log(new Date().toString)
+        console.log(new Date().toISOString())
+
+        /*
+        SUGESTÃO:
+        Sempre trabalhar no formato ISO .toISOString()
+        Pois facilita na implementação de qualquer linguagem
+        */ 
+
+    </script>
+</html>

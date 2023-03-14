@@ -1,0 +1,59 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Somente a VM do JavaScript irá entender essa declaração
+        // O JSON auxilia na transferência do código de JS para outra linguagem
+        // colocando em formato de String JSON
+
+        // JSON - JavaScript Object Notation
+        // JSON.stringify()
+        // JSON.parse()
+        
+        const people = [
+            // Objeto 1
+            {
+                id: 1,
+                name: "David",
+                lastName: "Rocha",
+                bornDate: new Date(1982, 1, 18),
+                address: {
+                    city: "São José dos Campos",
+                },
+            },
+            
+            // Objeto 2
+            {
+                id: 2,
+                name: "Leoncio",
+                lastName: "Alves",
+                bornDate: new Date(1995, 7, 23),
+                address: {
+                    city: "Florentina",
+                },    
+            }
+        ]
+
+        console.log(people)
+
+        // Conversão de JS para JSON (conversão obj -> string/JSON) -----------------
+
+        console.log(JSON.stringify(people)) // [{"id":1,"name":"David","lastName":"Rocha","bornDate":"1982-02-18T03:00:00.000Z","address":{"city":"São José dos Campos"}},{"id":2,"name":"Leoncio","lastName":"Alves","bornDate":"1995-08-23T03:00:00.000Z","address":{"city":"Florentina"}}]
+        // console.log(typeof JSON.stringify(people)) // string
+
+        // E é assim que a API conversa com o servidor
+
+
+        // Conversão de JSON para JS (conversão string/JSON -> obj ) -----------------
+        const json = 
+            [{"id":1,"name":"David","lastName":"Rocha",
+            "bornDate":"1982-02-18T03:00:00.000Z",
+            "address":{"city":"São José dos Campos"}},
+            {"id":2,"name":"Leoncio","lastName":"Alves",
+            "bornDate":"1995-08-23T03:00:00.000Z","address":{"city":"Florentina"}}]
+            // deu algum erro, mas é nessa linha de raciocínio
+
+        console.log(JSON.parse(json))
+        // .parse() - olha toda a String e coloca no formato de objeto
+    </script>
+</html>

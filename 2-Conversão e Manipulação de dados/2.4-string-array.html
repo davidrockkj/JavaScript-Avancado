@@ -1,0 +1,50 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // "David" <-> Array
+        let name = "David"
+
+        // String e Array se conversam por string ser uma cadeira de caracteres
+
+        console.log(name) // David
+
+        // leitura da primeira leitra
+        console.log(name[0]) // D
+
+        // leitura completa do Array (for of)
+        for (const v of name) {
+            console.log(v)
+            // D
+            // a
+            // v
+            // i
+            // d
+        }
+
+        console.log(name.length) // 5
+
+
+        // -----------------------------------------------------------------
+
+        // Caso eu queira trabalhar com um conjunto de números
+        let values = [1, 2, 3, 4, 5, 10, 20]
+
+        // transformando uma cadeia em String:
+        console.log(values.join()) // 1,2,3,4,5,10,20 
+        console.log(values.join(" ")) // 1 2 3 4 5 10 20 
+        console.log(values.join("")) // 123451020 
+
+        // Transformando uma String em uma cadeia
+        // David Rocha -> ["David", "Rocha"]
+        var nameCompleto = "David Rocha"
+        console.log(nameCompleto.split(" ")) // (2) ['David', 'Rocha']
+
+        // a .split() espera um argumento -> qual caractere ele vai identificar
+        // para fazer a separação. No caso acima o escolhido foi 'space' (" ")
+
+        var nameCompleto = "David,Rocha"
+        console.log(nameCompleto.split(",")) // (2) ['David', 'Rocha']
+
+    </script>
+</html>
