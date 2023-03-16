@@ -1,0 +1,94 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // Permite fazer agregações, simular a função map() e filtrar resultados
+
+        /*
+        - Ref. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+        array.reduce(callback[, initialValue])
+
+        callback - função que é executada em cada valor no array, recebe quatro argumentos:
+            acumulator - o valor retornado na última invocação do *callback*, ou o 
+                        argumento Valor Inicial, se fornecido
+            currentValue - o elemento atual que está sendo processado no array
+            indice - o índice do elemento atual que está sendo processado no array
+            array - o array ao qual a função reduce foi chamada
+            initialValue (opcional) - objeto a ser usado como o primeiro argumento
+                        da primeira chamada da função callback.
+        */
+
+        // ----------------------------------------------------------------------
+        
+        let values = [1.5, 2, 4, 10]
+        /*
+        function callback(acumulator, currentValue, index, arrau) {
+            console.log(`acumulator`, acumulator) // acumulator 1.5
+            console.log(`currentValue`, currentValue) // currentValue 2
+            console.log(`index`, index) // index 1
+            console.log(`array`, array) // (4) [1.5, 2, 4, 10]
+            console.log(`---`)
+
+            return acumulator + 1
+        }
+
+        values.reduce(callback)
+        */
+        // ----------------------------------------------------------------------
+        // Agregação - executar algo e retornar 1 único número
+        let sum = values.reduce((total, item) => total + item, 0)
+        console.log("sum", sum)
+
+        // ----------------------------------------------------------------------
+        // Média aritmética -> soma(valores) / quantidade
+        let avg = values.reduce(
+            (total, item, index) => (total + item) / (index + 1), 0
+        ) 
+        
+        console.log("avg", avg) // 2.9791666666666665
+
+        // Simmulando um Map -----------------------------------------------------
+        // Retornando array com números dobrados
+    //  let double = values.map         ---> a próxima linha funciona como se fosse essa
+        let doube = values.reduce((total, item) => total.concat(item * 2), [])
+        console.log("double", double) // (4) [3, 4, 8, 20]
+        // total -> array com novos valores
+        // item -> array com os valores antigos (a serem dobrados)
+
+        // Simulando um Filter ---------------------------------------------------
+        // se o elemento for > 2 ele entra dentro do novo array
+        let newValues = values.reduce((total, item) => {
+            console.log("---")
+            console.log("item", item)
+
+            if (item > 2) {
+                total.push(item)
+            }
+
+            console.log("total", total)
+
+            return total 
+        }, [])
+        console.log("newValues", newValues) 
+        
+        // CONSOLE
+        /*
+        ---
+        item 1.5
+        total []
+        ---
+        item 2
+        total []
+        ---
+        item 4
+        total [4]
+        ---
+        item 10
+        total (2) [4, 10]
+
+        newValues (2) [4, 10]
+        */ 
+
+    </script>
+</html>

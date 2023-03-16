@@ -1,0 +1,62 @@
+<html>
+    <meta charset="UTF-8">
+    <script>
+
+        // As funções FILTER, MAP e REDUCE nunca alteram a variável filtrada
+        // sempre retorna um novo conjunto de dados (array manipulado)
+        const numbers = [10, 18, 1, 15]
+
+        // Filtrar todos os valores que são >= 10
+        // Maneira 1:
+        /*
+        let res = []
+
+        for (const n of numbers) {
+            if (n >= 10) {
+                res.push(n)
+            }
+        }
+        
+        console.log(res)
+        */
+
+        // Maneira 2 (mais eficiente) ------------------------------------------------
+        /*
+        const gt10 = function(item) {
+            return item > 10 // sempre retorna true/false
+        }
+        let res = numbers.filter(gt10)
+        console.log(res) // (2) [18, 15]
+        */
+
+        // Maneira 2 - MELHORADA ------------------------------------------------
+        /*
+        let res = numbers.filter(function(item) {
+            return item > 10
+        })
+        console.log(res) // (2) [18, 15]
+        */
+
+        // Maneira 2 - MELHORADA MAIS AINDA ------------------------------------------------
+        let res = numbers.filter((item) => item > 10)
+        console.log(res) // (2) [18, 15]
+        // arrow function - se eu só tenho 1 linha, abstraio o 'return'
+
+
+
+        // Filtrando pessoas ------------------------------------------------
+        const people = [
+            { name: "Josimar", gender: "M", age: 30 },
+            { name: "Leoncio", gender: "M", age: 12 },
+            { name: "Carola", gender: "F", age: 24 },
+
+        ]
+
+        const maiorIdade = people.filter((p) => p.age >= 18)
+        // passando para uma outra variável 'maiorIdade'
+        console.log(maiorIdade) // (2) [{ name: "Josimar", age: 30 }, { name: "Carola", age: 24 }]
+
+        const maiorMasc = people.filter((p) => (p.age >= 18 && gender === "M"))
+        console.log(maiorMasc) // (1) [{ name: "Josimar", gender: "M", age: 30 }]
+    </script>
+</html>
