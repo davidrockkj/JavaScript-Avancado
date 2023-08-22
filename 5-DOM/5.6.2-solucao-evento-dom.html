@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // Recuperando elemento pelo id
+                const el = document.getElementById("title")
+                console.log("el", el)
+            })
+
+            // Dessa maneira, temos o seguinte: Quando o meu DOM estiver totalmente carregado, ele vai executar a função anônima que vai recuperar um elemento pelo id e vai fazer com que o elemento seja recuperado.
+
+            // Ou seja, esse evento garante que a função só vai ser executada somente quando tudo estiver carregado.
+
+            // Porém, para organizar melhor, o processo anterior pode ser feito da seguinte maneira:
+            const principal = () => {
+                // funcao1
+                // funcao2
+                // funcao3
+            }
+
+            document.addEventListener("DOMContentLoaded", principal)
+
+        </script>
+
+        <h1 id="title">Minha página</h1>
+    </body>
+</html>

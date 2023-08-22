@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <!-- A tag meta ajusta os acentos -->
+        <meta charset="UTF-8" />
+        <title>Curriculum</title>
+    </head>
+    <body>
+        <img src="../src/perfil-spider-man.jpg" width="100" />
+        <h1 id="person-name" class="text">David Rocha</h1>
+        <h2>Desenvolvedor JavaScript</h2>
+        <p>Conhecimento em programação Frontend, Backend para
+        desenvolvimento de sistemas Fullstack.</p>
+        <p class="text">
+            Para mais detalhes, por favor, visite meu 
+            <a href="https://github.com/davidrockkj">Github</a> ou
+            <a href="https://linkedin.com/in/davidrockkj">Linkedin</a>.
+        </p>
+        <script>
+            // Acessando os nós do DOM
+
+            // Forma "antiga" --------------------------------------
+            // document.getElementById()
+            // document.getElementByTagName()
+            // document.getElementsByClassName()
+
+            // Forma "moderna" -------------------------------------
+            // document.querySelector('selector')
+            // document.querySelectorAll('selector')
+            // element.querySelector('selector')
+            // element.querySelectorAll('selector')
+
+            // Obs.: A diferença é que o que não possui 'All' retorna a primeira
+            // ocorrência do elemento buscado
+
+            
+            // CSS Seletors -----------------------------------------
+            // ref: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+
+            // Universal: *
+            // id: #el-id
+            // Tag: <el>
+            // Class: .el-class
+            // Atributos: [attr=value]
+            // Grupos (vírgula): el, el
+            // Descendentes (espaço): el el
+            // Childs (>): el > el
+
+            // console.log("*", document.querySelectorAll("*"))
+                // retorna tudo (árvore DOM)
+            // console.log("id", document.querySelector("#person-name"))
+                // retorna o elemento que possui o id definido
+            // console.log("tag", document.querySelectorAll("p"))
+                // retorna todos os elementos associados à tag
+            // console.log("class", document.querySelectorAll(".text"))
+                // retorna os objetos que possuem a classe buscada
+            // console.log("attr", document.querySelectorAll("a[href]"))
+                // retorna todos os elementos que possuem determinado atributo
+                    // console.log(
+                    //     "attr",
+                    //     document.querySelectorAll("a[href='https://linkedin.com/in/davidrockkj']"))
+                            // nesse caso só retornará 1
+
+            // iterando toda a árvore DOM...
+            for (const el of document.querySelectorAll("*")) {
+                console.log("el", el)
+            }
+        </script>
+    </body>
+</html>

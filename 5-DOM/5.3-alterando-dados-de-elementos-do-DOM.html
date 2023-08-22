@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!-- A tag meta ajusta os acentos -->
+        <meta charset="UTF-8" />
+        <title>Curriculum</title>
+    </head>
+    <body>
+        <img src="../src/perfil-spider-man.jpg" width="100" />
+        <h1 id="person-name" class="text">Seu nome</h1>
+        <h2>Desenvolvedor JavaScript</h2>
+        <p>Conhecimento em programação Frontend, Backend para
+        desenvolvimento de sistemas Fullstack.</p>
+        <p class="text">
+            Para mais detalhes, por favor, visite meu 
+            <a href="https://github.com/davidrockkj">Github</a> ou
+            <a href="https://linkedin.com/in/davidrockkj">Linkedin</a>.
+        </p>
+        <script>
+            // Alterando um objeto do DOM
+
+            // 1 - Recuperar o elemento do DOM
+            const titleEl = document.querySelector("#person-name")
+            // 2 - Mostrar o valor contido no elemento
+            console.log("titleEl value:", titleEl.innerHTML)
+            // 3 - Atribuir um novo valor para ele
+            titleEl.innerHTML = "David Rocha"
+
+            // existe a possibilidade de alterar outras propriedades
+            titleEl.style.color = "red"
+
+        </script>
+    </body>
+</html>

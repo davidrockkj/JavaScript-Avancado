@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <!-- A tag meta ajusta os acentos -->
+        <meta charset="UTF-8" />
+        <title>Curriculum</title>
+    </head>
+    <body>
+        <img src="../src/perfil-spider-man.jpg" width="100" />
+        
+        <h1 id="person-name" class="text">Seu nome</h1>
+        
+        <h2>Desenvolvedor JavaScript</h2>
+        <p>Conhecimento em programação Frontend, Backend para
+        desenvolvimento de sistemas Fullstack.</p>
+        <p class="text">
+            Para mais detalhes, por favor, visite meu 
+            <a href="https://github.com/davidrockkj">Github</a> ou
+            <a href="https://linkedin.com/in/davidrockkj">Linkedin</a>.
+        </p>
+
+        <!-- Fazer essa parte dinamicamente
+        <h2>Projetos</h2>
+        <ul>
+            <li>Projeto 1</li>
+            <li>Projeto 2</li>
+            <li>Projeto 3</li>
+        </ul>
+        -->
+
+        <script>
+            // Criando elementos dinamicamente no ODM
+            // ref: https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createElement
+
+            // cria um elemento a partir de uma tag
+            // Porém, aqui ele fica apenas criado na memória, falta anexar à árvore DOM
+            const subTitleEl = document.createElement("h2")
+            subTitleEl.innerHTML = "Projetos"
+                // poderia ser innerText tbm, mas HTML aceita código HTML (bold,...)
+
+            // Anexando dentro do corpo do HTML (se eu tirar essa parte, ele some)
+            document.body.append(subTitleEl)
+
+            // Criando a lista de forma dinâmica ----------------------------------
+            const pjListEl = document.createElement("ul")
+            
+            const pjListItem1El = document.createElement("li")
+            pjListItem1El.innerHTML = "Todo MVC"
+
+            const pjListItem2El = document.createElement("li")
+            pjListItem2El.innerHTML = "Github API"
+
+            const pjListItem3El = document.createElement("li")
+            pjListItem3El.innerHTML = "eCommerce"
+
+
+            // Anexando os elementos ao elemento de lista
+            pjListEl.append(pjListItem1El)
+            pjListEl.append(pjListItem2El)
+            pjListEl.append(pjListItem3El)
+
+            // Anexando o elemento de lista de projetos no body
+            document.body.append(pjListEl)
+            // --------------------------------------------------------------------
+
+            for (let i=0; i<23; i++) {
+                pjListItem3El.innerHTML = `eCommerce ${i}`
+            }
+
+        </script>
+    </body>
+</html>

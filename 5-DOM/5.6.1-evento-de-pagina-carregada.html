@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <!-- Esse primeiro elemento (el1) irá retornar 'null' -->
+        <script>
+            // Recuperando elemento pelo id
+            const el1 = document.getElementById("title")
+            console.log("el1", el1)
+        </script>
+
+        <h1 id="title">Minha página</h1>
+
+        <!-- Esse segundo elemento (el2) irá retornar 'Minha página' -->
+        <script>
+            // Recuperando elemento pelo id
+            const el2 = document.getElementById("title")
+            console.log("el2", el2)
+        </script>
+
+        <!-- Isso acontece porquê o HTML é só uma representação em formato de texto do documento que o navegador lê e carrega dentro da Árvore DOM para que ele possa trabalhar.
+        Se o script for invocado no momento em que o elemento ainda não existe dentro da árvore, irá retornar como 'null'.
+
+        Como se precaver deste efeito, visto que muitas vez não dá pra ter um controle exato quando tal elemento será carregado?
+        Para isso, existe o DOMContentLoad, que diz o seguinte: "carreguei tudo o que precisava no DOM, agora você tá liberado para executar o código que desejar"
+    
+        A solução estará no arquivo 5.6.2 -->
+    </body>
+</html>
