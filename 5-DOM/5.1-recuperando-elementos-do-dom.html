@@ -1,5 +1,7 @@
 <html>
     <head>
+        <!-- A tag meta ajusta os acentos -->
+        <meta charset="UTF-8" />
         <title>Curriculum</title>
     </head>
     <body>
@@ -14,7 +16,48 @@
         </p>
         <script>
             // Hierarquia do DOM
-            // Document --> Nodes
+            // Document --> Nodes (nós) --> Elements --> Attributes
+
+            // Posso acessar o documento
+            console.log(document) // certo
+            // Posso acessar o body
+            console.log(document.body) // certo
+
+            // Mas não posso acessar o h1
+            // console.log(document.body.h1)
+
+            // Pois, a partir do body, eu só consigo fazer as buscas
+            // ou acesso a elementos através de métodos exploratórios
+
+            // Acessando os nós do DOM (forma antiga) ---------------
+
+            // document.getElementById() -> Pega um elemento por um
+            // id (person-name, lá em h1)
+            // Podendo atribuir a uma constante ou variável:
+            // const titleEl = document.getElementById("person-name")
+            // console.log("titleEl", titleEl)
+            // Ele vai retornar: David Rocha
+
+
+            // document.getElementByTagName() -> Recupera elementos
+            // a partir de um nome de tag
+            // const titleEl = document.getElementsByTagName("h1")
+            // console.log("titleEl", titleEl)
+            // Retorna uma lista
+
+
+            // document.getElementsByClassName() -> Recupera elementos
+            // a partir do nome da classe
+            // const textEl = document.getElementsByClassName("title")
+            // console.log("textEl", textEl)
+            // Retorna uma lista com os elementos que possuem a classe
+
+
+            // iterando...
+            // for (const el of textEl) {
+            //     console.log("el", el)
+            // }
+
         </script>
     </body>
 </html>
