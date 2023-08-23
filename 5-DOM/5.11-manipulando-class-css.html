@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando CSS</title>
+    <style>
+        .highlight {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Título da Página</h1>
+    <button id="change-class">Alterar classe</button>
+
+    <script>
+        // Manipulando Class CSS
+        // ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index
+
+        // Recuperando o title element
+        const titleEl = document.querySelector("#title")
+
+        // Adicionar um evento click no Button element
+        const buttonEl = document.querySelector("#change-class")
+        buttonEl.addEventListener("click", () => {
+            // if (titleEl.classList.contains("highlight")) {
+            //     console.log(titleEl.classList.contains("highlight"))
+            //     titleEl.classList.remove("highlight")
+            // } else {
+            //     console.log(titleEl.classList.contains("highlight"))
+            //     titleEl.classList.add("highlight")
+            // }
+
+            // A propriedade classList é como se fosse um array de classe CSS a qual possibilita ser manipulado e corresponde em tempo de execução no código, podendo adicionar ou remover
+            // O método 'contains()' retorna TRUE ou FALSE parar sabermos se ele contem a classe
+            // O método 'remove()' faz o trabalho de remover a classe
+            // O método 'add()' adiciona a classe
+            // ------------------------------------------------------------------
+
+            // Ao invés de fazer como mostrado acima, posso estar usando o método 'toggle()'
+            titleEl.classList.toggle("highlight")
+            console.log(titleEl.classList.contains("highlight"))
+
+            // Caso eu queria fazer o toggle com mais de uma classe, devo repetir a linha 42 pois o método não aceita mais de uma classe.
+        })
+    </script>
+</body>
+
+</html>

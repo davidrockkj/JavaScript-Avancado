@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <title>onsubmit</title>
+</head>
+<body>
+    <!-- Esse evento consiste em, ao digitar ao no input e colocar para buscar, o google irá tratar das informações -->
+
+    <form action="https://google.com/search" method="get">
+    <!-- O método 'get' deixa os dados expostos na barra de navegação -->
+        <label for="q">* Busca</label>
+        <input type="text" name="q">
+        <!-- Na label e input acima, tem o nome 'q' que seria de 'query'. Deve ser colocar pois é o parâmetro que o Google entende no /search -->
+
+        <input type="submit" value="Pesquisar">
+    </form>
+
+    <script>
+        // Evento de formulário - onsubmit
+        // ref: https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+
+        // Capturando o formulário, através do QuerySelector
+        const formEl = document.querySelector("form")
+        
+        // Adicionando um eventListener do tipo submit, que funciona interceptando a ação de enviar as informações para o parâmetro 'action' do formulário.
+        // O 'submit' do input não tem nada a ver com esse 'submit' do eventListener
+        formEl.addEventListener("submit", (event) => {
+            
+            // Enviando para o google APENAS se contiver algo no input
+            const queryValue = event.target.querySelector("input[name=q]").value
+            
+            console.log("queryValue", queryValue)
+
+            // Fazendo uma validação simples
+            if (!queryValue) {
+                event.preventDefault()
+                alert("O campo 'Busca' é obrigatório!")
+            }
+
+        })
+    </script>
+</body>
+</html>

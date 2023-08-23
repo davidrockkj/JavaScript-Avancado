@@ -1,0 +1,32 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">   
+    
+    <script>
+        // Eventos de teclas
+        // ref: https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
+
+        const inputEl = document.querySelector("input[type=text]")
+        inputEl.addEventListener("keydown", (event) => {
+            console.log("Apertou uma tecla", event)
+            // com o parâmetro 'event', podemos ter muitas informações, incluindo Key (qual foi a tecla) e code (código da tecla na tabela ASCII)
+        })
+
+
+        inputEl.addEventListener("keyup", (event) => {
+            console.log("Soltou a tecla:", `${event.key} - ${event.keyCode}`)
+
+            if (event.keyCode === 13) {
+                alert(`Tecla ENTER foi pressionada - ${inputEl.value}`)
+                // Aqui poderia ser o evento de enviar a msg
+            }
+            
+        })
+
+
+    </script>
+</body>
+</html>

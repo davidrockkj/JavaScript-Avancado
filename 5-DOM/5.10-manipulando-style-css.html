@@ -1,0 +1,40 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando style css</title>
+</head>
+<body>
+
+    <!-- O DOM é uma Árvore que contem a estrutura do HTML, com suas informações E TAMBÉM tem o estilo computado (computed style):
+    é o que ele carrega de padrão + as classes CSS -->
+
+    <h1 id="title">Título da Página</h1>
+    <button id="change-color">Alterar cor</button>
+    
+
+    <script>
+        // Maniplando Style CSS
+        // ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index
+
+        const titleEl = document.querySelector("#title")
+
+        const buttonEl = document.querySelector("#change-color")
+
+        buttonEl.addEventListener("click", () => {
+            if (titleEl.style.color === "red") {
+                titleEl.style = "color: black; font-size: 32px"
+
+                // ou
+                // titleEl.style.color = "red"
+                // titleEl.style.fontSize = "55px"
+
+            } else {
+                titleEl.style = "color: red; font-size: 55px"
+            }
+            
+            console.log("Color", titleEl.style.color)
+            
+        })
+
+    </script>
+</body>
+</html>

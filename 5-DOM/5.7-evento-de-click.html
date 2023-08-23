@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>Clique me</button>
+    <a href="www.google.com">Clique me</a>
+
+    <script>
+        // Evento de click
+        // ref: https://developer.mozilla.org/en-US/docs/Web/Element/click_event
+
+        // Detectar se o usuário fez algum tipo de click, duplo click, click com funções específicas...
+
+        const button = document.querySelector("button")
+        button.addEventListener("click", () => {
+            // Não é preciso colocar o preventDefault pq esse já é o comportamento do botão
+            console.log("Clicou no botão")
+        })
+
+        const hyperlink = document.querySelector("a")
+        hyperlink.addEventListener("click", (event) => {
+            event.preventDefault()
+            // Previne que ocorra o comportamento padrão (que seria ir para a página do google)
+
+            console.log("Clicou no hyperlink")
+        })
+    </script>
+</body>
+</html>
