@@ -1,0 +1,145 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Promises e Processamento Assíncrono</title>
+</head>
+<body>
+
+    <button>Executar</button>
+
+    <script>
+        
+        // São funções especiais que podem estar disponíveis no presente, futuro ou NUNCA
+        // Permite que criemos funções que vão rodar de forma assíncrona ao nosso código principal. Ela segue um caminho desconhecido do caminho principal.
+
+        // Uma Promise está em um desses estados:
+        // pending (pendente): Estado inicial, que não foi realizada nem rejeitada
+        // fulfilled (realizada): sucesso na operação
+        // rejected (rejeitado): falha na operação
+
+        // ---------------------------------------------------------------------
+        // function testPromise() {
+        //     console.log("sync started")
+
+        //     // Promise é uma classe criada da maneira a seguir. Ela espera uma função de callBack, que é onde vamos executar o conteúdo da Promise
+        //     // Ela tem a função de informar que algo foi finalizado
+        //     // Exemplo: se não for o console.log no setTimeout, eu nunca saberei que que terminou
+        //     // new Promise(() => {})
+
+        //     // setTimeout(() => {
+        //     //     console.log("async timer")
+        //     // }, 3000)
+        //     // // função que quero executar e o tempo, em milisegundos
+            
+        //     // -------------------------------------------------------
+        //     // new Promise(() =>{
+        //     //     setTimeout(() => {
+        //     //     console.log("async timer")
+        //     //     }, 3000)
+        //     //     // função que quero executar e o tempo, em milisegundos
+        //     // })
+
+        //     // -------------------------------------------------------
+        //     // Eu posso atribuir a uma variável do tipo p1 e capturar o resultado da promisse com uma função 'then()'
+
+        //     // const p1 = new Promise((resolve, reject) =>{
+        //     //     setTimeout(() => {
+        //     //     console.log("async timer")
+        //     //     resolve()
+        //     //     // por 'setTimeout()' ser uma função que sempre dá certo, a gente chama o 'resolve()' que invoca o 'then()'
+
+        //     //     }, 1000)
+        //     //     // função que quero executar e o tempo, em milisegundos
+        //     // })
+
+        //     // p1.then(() => {
+        //     //     console.log('Promise finished')
+        //     // })
+
+
+        //     // -------------------------------------------------------
+        //     // É possível simplificar, vez que a Promise está sendo atribuída a uma variável. Então, é possível colocar o then diretamente como uma chamada, depois que inicializa a promise
+        //     // Como o 'setTimeout()' já informa com o 'resolve()', é possível retirar o 'console.log' usado nele
+        //     // O 'then()' representa a finalização do promise com a chamada do 'resolve()'
+
+        //     // new Promise((resolve, reject) =>{
+        //     //     setTimeout(() => {
+        //     //     resolve()
+        //     //     // por 'setTimeout()' ser uma função que sempre dá certo, a gente chama o 'resolve()' que invoca o 'then()'
+
+        //     //     }, 1000)
+        //     //     // função que quero executar e o tempo, em milisegundos
+        //     // }).then(() => {
+        //     //     console.log('Promise finished')
+        //     // })
+            
+            
+        //     console.log("sync finished")
+        // }
+
+
+
+        // ------------------------------------------------------------------------
+        // O 'resolve()' pode passar valores que podem ser capturados pelo 'then()']
+        
+        let count = 0
+        function testPromise() {
+            const promiseCount = ++count
+            console.log("sync started")
+
+            // new Promise((resolve, reject) =>{
+            //     setTimeout(() => {
+            //     resolve(promiseCount)
+
+            //     }, 1000)
+            // }).then((value) => {
+            //     console.log(`async finished ${value}`)
+            // })
+
+
+            // --------------------------------------------
+            // Como faz para sinalizar ao Promise que algo deu errado?
+            // Utiliza o reject
+
+            // new Promise((resolve, reject) =>{
+            //     setTimeout(() => {
+            //     // resolve(promiseCount)
+            //     reject(promiseCount)
+
+            //     }, 1000)
+            // }).then((value) => {
+            //     console.log(`async finished ${value}`)
+            // }).catch(() => {
+            //     console.error("async error")
+            // })
+            // // O 'catch()' captura o reject
+            
+
+            // ---------------------------------------------
+            // Organizando o código
+
+            new Promise((resolve, reject) =>{
+                setTimeout(() => {
+                    // Assim ficou: se for 'par', ele invoca o 'resolve()'
+                    if (promiseCount % 2 == 0) {
+                        resolve(promiseCount)
+                    } else {
+                        reject(promiseCount)
+                    }
+                }, 1000)
+            }).then((value) => {
+                console.log(`async finished ${value}`)
+            }).catch((value) => {
+                console.error(`async error ${value}`)
+            })
+
+            // É possível criar uma constante do tipo 'Promise' e retornar como um resultado de uma função
+
+            console.log("sync finished")
+        }
+
+        const buttonEl = document.querySelector("button")
+        buttonEl.addEventListener("click", testPromise)
+    </script>
+    
+</body>
+</html>
